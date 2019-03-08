@@ -2,4 +2,24 @@
 
 <%= render 'form', packaging: @packaging %>
 
+
+<h1>Edit</h1>
+
+<table>
+  <tbody>
+    <% @packagings.each do |packaging| %>
+      <tr>
+        <td><%= packaging.date %></td>
+        <td><%= packaging.name %></td>
+        <td><%= packaging.image %></td>
+        <td><%= link_to 'Show', packaging %></td>
+        <td><%= link_to 'Edit', edit_packaging_path(packaging) %></td>
+        <td><%= link_to 'Destroy', packaging, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to 'Back', packagings_path %>

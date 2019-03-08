@@ -15,6 +15,7 @@ class PackagingsController < ApplicationController
   # GET /packagings/new
   def new
     @packaging = Packaging.new
+    @packagings = Packaging.all
   end
 
   # GET /packagings/1/edit
